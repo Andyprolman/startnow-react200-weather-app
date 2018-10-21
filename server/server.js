@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.get('/api', (req, res) => {
     console.log('input from front end: ', req.query.input);
     axios(
-        (`http://api.openweathermap.org/data/2.5/weather?q=${req.query.input}&APPID=${process.env.WEATHER_API_KEY}`)
+        (`http://api.openweathermap.org/data/2.5/weather?q=${req.query.input}&APPID=${process.env.WEATHER_API_KEY}&units=imperial`)
     )
     .then(response => {
         console.log(response.data)
